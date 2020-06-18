@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
-const brain = require("brain.js");
+import * as brain from 'brain.js'
+//const brain = require("brain.js");
 
 function Teste() {
     const [trainValues, setTrainValues] = useState([{ input: [0, 0], output: [0] },])
@@ -25,7 +26,8 @@ function Teste() {
         const net = new brain.NeuralNetwork({ hiddenLayers: [3] });        
         console.log(prev1, prev2)
         net.train(trainValues);
-        setResultado(net.run([parseInt(prev1),parseInt(prev2)]))
+        //setResultado(net.run([parseInt(prev1),parseInt(prev2)]))
+        setResultado(net.run([prev1,prev2]))
     }
              
     function addTrainValue(e) {
